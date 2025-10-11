@@ -480,14 +480,21 @@ ninja.data = [{
         title: 'LinkedIn',
         section: 'Socials',
         handler: () => {
-          window.open("https://www.linkedin.com/in/hiruna-vishwamith", "_blank");
+          window.open("https://www.linkedin.com/in/hiruna-vishwamith-910839225/", "_blank");
         },
       },{
         id: 'social-scholar',
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=InRMU4AAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=-InRMU4AAAAJ", "_blank");
+        },
+      },{
+        id: 'social-x',
+        title: 'X',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://twitter.com/HVishwamith", "_blank");
         },
       },{
       id: 'light-theme',
