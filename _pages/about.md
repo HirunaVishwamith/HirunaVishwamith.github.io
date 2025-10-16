@@ -43,11 +43,9 @@ When I’m not optimizing FPGA designs, I like exploring new AI models, and occa
 ### research highlights:
 
 <ul>
-  <li><b>Language Model Benchmarks.</b> <a href="http://www.vgbench.com">VideoGameBench</a> (2025), <a href="https://arxiv.org/abs/2502.10517v1">KernelBench</a> (ICML, 2025), <a href="https://www.swebench.com/multimodal.html">SWE-bench Multimodal</a> <img src="assets/img/swellamamm.png" alt="emoji" width="20" style="vertical-align: middle;"> (ICLR, 2025)</li>
+  <li><b>Two paper published</b>: My latest papers <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305485_Hardware-Accelerated_Transformer_Framework_for_Real-Time_Battery_SoH_Estimation/links/68bcf9f86fe8e57ec8e2f9db/Hardware-Accelerated-Transformer-Framework-for-Real-Time-Battery-SoH-Estimation.pdf">Hardware-Accelerated Transformer Framework for Real-Time Battery SoH Estimation</a> (2025), <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305489_Exploring_Neuromorphic_Computing_with_Loihi-2_for_High-Performance_CFD_Simulations/links/68bcf9c56fe8e57ec8e2f9d9/Exploring-Neuromorphic-Computing-with-Loihi-2-for-High-Performance-CFD-Simulations.pdf">Exploring Neuromorphic Computing with Loihi-2 for High-Performance CFD Simulations</a> (2025), published on venue IEEE HPEC 2025.</li>
 
-  <li><b>Models.</b> <a href="https://www.vant.ai/neo-1">Neo-1</a> (2025), <a href="https://huggingface.co/facebook/KernelLLM">KernelLLM-8B</a> (2025), <a href="https://arxiv.org/abs/2402.01695">Language-guided World Models</a> (SpLU-RoboNLP @ ACL, 2024)</li>
-
-  <li><b>ML Systems.</b> <a href="https://gpu-mode.github.io/popcorn/">Project Popcorn 🍿</a> (2025), <a href="https://github.com/Ligo-Biosciences/AlphaFold3?tab=readme-ov-file#msa-pair-averaging-efficiency">Triton kernels for OSS AlphaFold3 (1k+ ⭐'s)</a> (2024)</li>
+  <li><b>End-to-End Multicore Framework</b>: developed an end-to-end, out-of-order, cache-coherent multicore RISC-V processor for FPGA capable of running bare-metal C programs and Linux images.</li>
 </ul>
 <!-- in  and <a href="https://arxiv.org/abs/2302.04449">guiding</a> agent behavior in different data modalities</b> to create more reliable, interpretable, and less data hungry AI models. I'm also very interested -->
 
