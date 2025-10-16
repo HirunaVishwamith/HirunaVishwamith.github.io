@@ -1,61 +1,40 @@
 {
   "basics": {
-    "name": "Albert Einstein",
-    "label": "Scientist",
+    "name": "Hiruna Vishwamith",
+    "label": "FPGA Design Engineer intern",
     "image": "",
-    "email": "albert@einstein.de",
-    "phone": "(912) 123-4567",
-    "url": "https://alshedivat.github.io/al-folio/",
-    "summary": "A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "CA 94115",
-      "city": "San Francisco",
-      "countryCode": "US",
-      "region": "California"
-    },
-    "profiles": [
-      {
-        "network": "Twitter",
-        "username": "AlbertEinstein",
-        "url": "https://twitter.com/AlbertEinstein"
-      }
-    ]
+    "email": "hvishwamith@gmail.com"
   },
   "work": [
     {
-      "name": "Institute for Advanced Study, Princeton University",
-      "position": "Professor of Theoretical Physics",
-      "url": "https://example.com",
-      "startDate": "1933-01-01",
-      "endDate": "1955-01-01",
-      "summary": "Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.",
-      "highlights": ["Relativity"]
-    }
-  ],
-  "volunteer": [
+      "name": "Apex Compute",
+      "position": "FPGA Design Engineer intern",
+      "url": "https://www.apexcompute.com/",
+      "startDate": "2000-03-17",
+      "endDate": "present",
+      "summary": "Designing hardware accelerators for LLM workloads.",
+      "highlights": ["FPGA, Efficient Hardware"]
+    },
     {
-      "organization": "People's Climate March",
-      "location": "Zurich, Switzerland",
-      "position": "Lead Organizer",
-      "url": "https://example.com",
-      "startDate": "2014-04-01",
-      "endDate": "2015-07-01",
-      "summary": "Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.",
-      "highlights": ["Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march.", "Men of the year 2014 by Time magazine"]
+      "name": "National University of Singapore",
+      "position": "Research Scholar - Internship",
+      "startDate": "2023-12-01",
+      "endDate": "2024-05-27",
+      "summary": "Designed and implemented 3DRA CGRA (Coarse-Grained Reconfigurable Architecture) on U250 FPGA, achieving a 650MHz operating frequency.",
+      "highlights": ["Computer Architecture"]
     }
   ],
   "education": [
     {
-      "institution": "University of Zurich, Zurich, Switzerland",
-      "location": "Zurich, Switzerland",
-      "url": "https://www.uzh.ch/",
-      "area": "Software Development",
-      "studyType": "PhD",
-      "startDate": "1905-01-01",
-      "endDate": "1905-01-01",
-      "score": "10",
-      "courses": ["Theory of Relativity"]
+      "institution": "University of Moratuwa, Moratuwa, Sri Lanka",
+      "location": "Moratuwa, Sri Lanka",
+      "url": "https://ent.uom.lk/",
+      "area": "Electronic and Telecommunication Engineering",
+      "studyType": "B.Sc.(Hons)",
+      "startDate": "2021-06-21",
+      "endDate": "2025-06-27",
+      "score": "3.75",
+      "courses": ["Machine Learning, Signal Processing, Embedded Systems, FPGA, Computer Architecture"]
     }
   ],
   "awards": [

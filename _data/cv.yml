@@ -2,18 +2,18 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
+      value: Hiruna Vishwamith
     - name: Date of Birth
-      value: 14th March 1879
+      value: 20th June 2000
     - name: Languages
-      value: English, German
+      value: English
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: B.Sc.(Hons)
+      institution: University of Moratuwa, Moratuwa, Sri Lanka
+      year: 2025
       description:
         - Description 1.
         - Description 2.
