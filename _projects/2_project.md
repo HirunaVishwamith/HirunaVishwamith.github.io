@@ -185,7 +185,7 @@ It provides a tangible framework for studying **out-of-order execution**, **memo
 
 By integrating a **TAGE branch predictor**, **AXI-ACE protocol**, and **FPGA-ready verification flow**, it serves as a **practical bridge between theoretical architecture and real-world hardware design** — empowering both education and research in next-generation processor systems.
 
----
+<!-- --- -->
 
 <!-- [View Project on GitHub](https://github.com/YourUsername/OoO-Multicore-RISCV) -->
 

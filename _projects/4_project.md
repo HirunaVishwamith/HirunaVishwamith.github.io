@@ -1,80 +1,116 @@
 ---
+
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: Parallel System Bus on FPGA
+description: Multi-master, multi-slave bus architecture enabling efficient parallel communication on DE0-Nano FPGA
+img: assets/img/system_bus.jpg
+importance: 4
+category: work
+related_publications: false
+---------------------------
+
+### Project Overview
+
+This project presents the design and implementation of a **parallel system bus** on the **DE0-Nano FPGA board**, developed using **Verilog** and **Intel Quartus Prime**.
+The architecture enables **parallel communication** between **two master devices** and **three slave devices**, supporting efficient **data transfer** and **resource sharing** across the system.
+
+Through careful design and verification, this bus infrastructure provides a scalable and modular foundation for **multi-master embedded systems**, where multiple hardware modules can operate and communicate concurrently.
+
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Motivation
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+Modern embedded and FPGA-based systems often integrate multiple processing and peripheral modules that require efficient communication and shared access to resources.
+Traditional single-master buses can create **bottlenecks**, limiting parallelism and throughput.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+This project addresses that challenge by creating a **multi-master, multi-slave bus** that supports **parallel communication** and **conflict-free arbitration**, enabling smooth and deterministic data exchange between multiple components in real time.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Key Features
+
+* **Multi-Master, Multi-Slave Architecture:**
+  Supports two masters and three slaves operating concurrently, enabling **parallel data transactions**.
+
+* **Verilog Implementation:**
+  Entire design written in **Verilog HDL**, ensuring portability and efficient hardware synthesis.
+
+* **FPGA Deployment:**
+  Implemented and tested on the **Intel DE0-Nano FPGA board**, using **Quartus Prime** for synthesis, timing analysis, and programming.
+
+* **Real-Time Debugging:**
+  Integrated with **In-System Memory Content Editor** for live memory inspection, aiding real-time monitoring and debugging.
+
+* **Pre-Hardware Verification:**
+  Verified functionality using **Verilator**, ensuring correctness and robustness before FPGA deployment.
+
+---
+
+### System Architecture
+
+The system bus architecture is composed of several core modules:
+
+1. **Bus Arbiter** — Manages access from multiple masters, ensuring fair and deterministic bus usage.
+2. **Master Interfaces** — Two master devices initiate read/write transactions concurrently.
+3. **Slave Interfaces** — Three slave modules handle requests from any master via the shared bus.
+4. **Shared Data and Address Lines** — Enable synchronized and parallel data transfer across the system.
+5. **Debug and Monitoring Interface** — Provides in-system visibility into bus transactions and memory states.
+
+---
+
+### Visualization & Gallery
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid 
+        loading="eager" 
+        path="assets/img/system_bus.jpg" 
+        title="Parallel System Bus on DE0-Nano FPGA" 
+        class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
+
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+  Verilog-based multi-master, multi-slave system bus implemented on the DE0-Nano FPGA — demonstrating parallel data communication between masters and slaves.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
+### Technical Insights
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+| Component        | Description                                                         |
+| ---------------- | ------------------------------------------------------------------- |
+| **Language**     | Verilog HDL                                                         |
+| **Platform**     | Intel DE0-Nano FPGA                                                 |
+| **Toolchain**    | Intel Quartus Prime                                                 |
+| **Verification** | Verilator simulation                                                |
+| **Bus Type**     | Multi-master, multi-slave parallel bus                              |
+| **Masters**      | 2 concurrent bus masters                                            |
+| **Slaves**       | 3 address-mapped slave devices                                      |
+| **Debug Tools**  | In-System Memory Content Editor                                     |
+| **Applications** | Embedded systems, interconnect design, FPGA-based SoC architectures |
 
-{% endraw %}
+---
+
+### Future Enhancements
+
+* Integrate **AXI-lite** or **Wishbone-compatible interface** for broader interoperability.
+* Add **bus performance counters** for transaction latency analysis.
+* Introduce **DMA (Direct Memory Access)** for high-throughput data movement.
+* Expand scalability to support **more masters and slaves** dynamically.
+* Develop a **graphical monitoring tool** for visualizing bus traffic and arbitration events in real time.
+
+---
+
+### Summary
+
+This project demonstrates a **fully functional parallel system bus** implemented on FPGA, designed for **multi-master communication** and **shared resource access**.
+It highlights core competencies in **FPGA design**, **digital communication protocols**, and **hardware verification**, providing a foundation for scalable **System-on-Chip (SoC)** development.
+
+By combining **Verilog-based design**, **FPGA prototyping**, and **simulation-driven validation**, the project bridges theoretical architecture and practical hardware realization — showcasing efficient, concurrent data communication in embedded hardware systems.
+
+---
+
+[View Project on GitHub](https://github.com/HirunaVishwamith/System_Bus_Design)
+
+---
