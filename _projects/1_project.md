@@ -3,7 +3,7 @@ layout: page
 title: Multi-threaded RISC-V Benchmark Framework
 description: A portable and extensible RISC-V benchmark suite for multicore processors.
 img: assets/img/mt-benchmark_profile.png
-importance: 1
+importance: 2
 category: work
 related_publications: false
 ---
