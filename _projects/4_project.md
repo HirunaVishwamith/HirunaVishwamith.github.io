@@ -1,5 +1,4 @@
 ---
-
 layout: page
 title: Parallel System Bus on FPGA
 description: Multi-master, multi-slave bus architecture enabling efficient parallel communication on DE0-Nano FPGA

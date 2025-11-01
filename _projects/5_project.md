@@ -1,5 +1,4 @@
 ---
-
 layout: page
 title: Parameterized SIMD Processor for Matrix Operations
 description: Fully parameterized SIMD processor with custom ISA for matrix arithmetic and hardware acceleration on FPGA
