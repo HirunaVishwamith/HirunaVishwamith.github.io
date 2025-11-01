@@ -431,36 +431,26 @@ ninja.data = [{
           description: "RISC-V multi-core emulator capable of booting both Linux and bare-metal programs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-parallel-system-bus-on-fpga",
+          title: 'Parallel System Bus on FPGA',
+          description: "Multi-master, multi-slave bus architecture enabling efficient parallel communication on DE0-Nano FPGA",
           section: "Projects",handler: () => {
               window.location.href = "/projects/4_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-parameterized-simd-processor-for-matrix-operations",
+          title: 'Parameterized SIMD Processor for Matrix Operations',
+          description: "Fully parameterized SIMD processor with custom ISA for matrix arithmetic and hardware acceleration on FPGA",
           section: "Projects",handler: () => {
               window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+            },},{id: "projects-reciprocal-frequency-counter",
+          title: 'Reciprocal Frequency Counter',
+          description: "A high-precision reciprocal frequency counter measuring signals from 1Hz to 100MHz with up to 100V amplitude",
           section: "Projects",handler: () => {
               window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+            },},{id: "projects-analog-function-generator",
+          title: 'Analog Function Generator',
+          description: "Function generator capable of producing sine, square, triangular, and sawtooth waveforms with adjustable duty cycle",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
             },},{
         id: 'social-email',
         title: 'email',
