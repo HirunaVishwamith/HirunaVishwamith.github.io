@@ -421,9 +421,9 @@ ninja.data = [{
           description: "A portable and extensible RISC-V benchmark suite for multicore processors.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+            },},{id: "projects-cache-coherent-out-of-order-risc-v-multicore-processor",
+          title: 'Cache-Coherent, Out-of-Order RISC-V Multicore Processor',
+          description: "A modular, cache-coherent RISC-V out-of-order multicore processor capable of running bare-metal workloads and Linux images.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
             },},{id: "projects-project-3-with-very-long-name",
