@@ -6,7 +6,7 @@ img: assets/img/system_bus.jpg
 importance: 4
 category: work
 related_publications: false
----------------------------
+---
 
 ### Project Overview
 

@@ -1,80 +1,107 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 6
+title: Reciprocal Frequency Counter
+description: A high-precision reciprocal frequency counter measuring signals from 1Hz to 100MHz with up to 100V amplitude
+img: assets/img/FC_1.jpg
+importance: 1
 category: fun
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Project Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+I have developed a **versatile reciprocal frequency counter** capable of accurately measuring frequencies across an extensive range — from **1 Hz to 100 MHz** — and handling input signals with amplitudes of up to **100 volts**.
+This innovative device was designed not only as a **technical project** but also with a **product-oriented mindset**, incorporating **marketability** and **user appeal** as key design goals.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+The counter is engineered to accommodate a wide variety of **periodic waveforms**, delivering **high precision** and **robust performance** through carefully crafted measurement and signal conditioning circuitry.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Working Principle
+
+The core operating principle of this reciprocal frequency counter is based on **comparing an unknown input frequency** against a **highly stable reference clock**.
+This **reciprocal measurement approach** provides exceptional resolution, particularly for **low-frequency signals**, where traditional counting methods often struggle.
+
+By leveraging **advanced signal processing** and **precision timing circuitry**, the counter achieves both **accuracy** and **stability** across its entire operating range.
+
+---
+
+### Key Features
+
+* **Wide Frequency Range:**
+  Accurately measures signals from **1 Hz to 100 MHz**.
+
+* **High Voltage Handling:**
+  Supports input amplitudes up to **100 V**, compatible with various signal sources.
+
+* **Reciprocal Counting Technique:**
+  Delivers **high precision** by measuring time intervals relative to a reference clock.
+
+* **Signal Flexibility:**
+  Capable of handling multiple waveform types — sine, square, triangular, and pulse signals.
+
+* **User-Friendly Interface:**
+  Simplified control layout and clear display for seamless measurement and configuration.
+
+* **Product-Oriented Design:**
+  Designed as a **marketable, sellable device**, showcasing both engineering and **product design** skills.
+
+---
+
+### Visualization & Gallery
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid 
+        loading="eager" 
+        path="assets/img/pcb_3d.png" 
+        title="Reciprocal Frequency Counter – PCB Design" 
+        class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
+
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+  PCB layout of the reciprocal frequency counter showing precision signal conditioning and timing control circuits.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+<div class="row justify-content-sm-center mt-4">
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid 
+        loading="lazy" 
+        path="assets/img/FC_1.jpg" 
+        title="Reciprocal Frequency Counter – Finished Product" 
+        class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
 
-{% endraw %}
+<div class="caption">
+  The finished reciprocal frequency counter prototype — a robust, high-accuracy measurement instrument designed for real-world usability and commercial appeal.
+</div>
+
+---
+
+### Technical Insights
+
+| Component                 | Description                                                             |
+| ------------------------- | ----------------------------------------------------------------------- |
+| **Measurement Technique** | Reciprocal frequency counting                                           |
+| **Frequency Range**       | 1 Hz – 100 MHz                                                          |
+| **Input Amplitude Range** | Up to 100 V                                                             |
+| **Signal Types**          | Sine, square, triangular, pulse                                         |
+| **Core Components**       | Precision reference oscillator, signal conditioner, timer/counter logic |
+| **Design Tools**          | PCB CAD suite and circuit simulation tools                              |
+| **Target Users**          | Engineers, technicians, and researchers                                 |
+| **Category**              | Fun / Product Design                                                    |
+
+---
+
+### Summary
+
+This project demonstrates the integration of **engineering precision** with **product design sensibility**, resulting in a **reciprocal frequency counter** that is both **technically robust** and **commercially viable**.
+With its wide frequency range, high-voltage compatibility, and clean user interface, the device exemplifies a perfect blend of **electronics innovation**, **signal processing**, and **creative hardware design**.
+
+---
+
+[View Project on GitHub](https://github.com/HirunaVishwamith/Reciprocal-Freqency-Counter)
+
+---

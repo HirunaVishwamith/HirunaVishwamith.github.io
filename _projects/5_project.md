@@ -6,7 +6,7 @@ img: assets/img/SIMD_processor.png
 importance: 5
 category: work
 related_publications: false
----------------------------
+---
 
 ### Project Overview
 
