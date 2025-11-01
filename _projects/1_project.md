@@ -2,7 +2,7 @@
 layout: page
 title: Multi-threaded RISC-V Benchmark Framework
 description: A portable and extensible RISC-V benchmark suite for multicore processors.
-img: assets/img/12.jpg
+img: assets/img/mt-benchmark_profile.png
 importance: 1
 category: work
 related_publications: false
@@ -11,19 +11,31 @@ related_publications: false
 
 ### Project Overview
 
-This project focuses on developing a **multi-threaded RISC-V benchmark framework** designed to evaluate and compare the performance of **custom RISC-V multicore processors** and **emulator environments**.  
-The framework integrates a set of **standard RISC-V benchmarks** as a foundation, with ongoing efforts to incorporate **multi-threaded and memory-intensive workloads** for more comprehensive testing.
+This project focuses on developing a **multi-threaded RISC-V benchmark framework** designed to evaluate and compare the performance of **custom RISC-V multicore processors** and **emulator environments**. The framework integrates a set of **standard RISC-V benchmarks** as a foundation, with ongoing efforts to incorporate **multi-threaded and memory-intensive workloads** for more comprehensive testing.
 
 The primary goal is to provide a **lightweight, extensible, and freestanding benchmarking environment** that can run on both **bare-metal RISC-V hardware** and **software simulators** without relying on an operating system.
+
+**Benchmarks included:**  
+`mt-matmul` | `mt-csaxpy` | `mt-vvadd` | `mt-histo` | `mt-masks-filter`
+
+**Summary:**  
+These benchmarks collectively evaluate various aspects of multicore performance — including **arithmetic throughput**, **memory bandwidth**, **cache utilization**, **load balancing**, and **synchronization efficiency**.  
+Each test targets a distinct computational pattern:  
+- `mt-vvadd` performs vector addition to test memory bandwidth and data-level parallelism.  
+- `mt-csaxpy` stresses arithmetic pipelines through scalar-vector fused multiply-add operations.  
+- `mt-histo` measures synchronization overhead and cache coherence under shared data access.  
+- `mt-masks-filter` evaluates control divergence, branch prediction, and conditional data movement.  
+- `mt-matmul` represents compute-intensive matrix multiplication to assess arithmetic throughput and cache locality.  
+
+Together, these workloads provide a **balanced and realistic performance profile** across computation-heavy and memory-bound applications — making this suite a robust tool for benchmarking **RISC-V multicore architectures**.
 
 ---
 
 ### Motivation
 
-As RISC-V continues to evolve as an open and modular ISA, there is a growing need for **flexible benchmarking tools** that can assess multicore performance under realistic workloads.  
-Traditional benchmark suites often assume the presence of an OS or large runtime environment, making them unsuitable for early-stage hardware testing or custom simulators.
+As RISC-V continues to evolve as an open and modular ISA, there is a growing need for **flexible benchmarking tools** that can assess multicore performance under realistic workloads. Traditional benchmark suites often assume the presence of an OS or large runtime environment, making them unsuitable for early-stage hardware testing or custom simulators.
 
-This framework was created to **fill that gap**, offering:
+This framework was created to fill that gap, offering:
 
 - A **freestanding benchmarking suite** that runs directly on hardware without OS support.
 - **Multi-threaded test scenarios** to evaluate synchronization, communication, and load distribution.
@@ -131,17 +143,7 @@ By removing OS dependencies and providing direct hardware interfacing through UA
 
 ---
 
----
-
-### Explore More
-
-You can find the full source code, documentation, and ongoing updates in the project’s repository:
-
-<p>
-  <a href="https://github.com/HirunaVishwamith/Mt-Benchmark" class="btn btn-primary btn-lg" target="_blank">
-     View on GitHub
-  </a>
-</p>
+[View Project on GitHub](https://github.com/HirunaVishwamith/Mt-Benchmark")
 
 
 
