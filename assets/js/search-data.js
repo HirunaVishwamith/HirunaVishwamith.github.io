@@ -426,9 +426,9 @@ ninja.data = [{
           description: "A modular, cache-coherent RISC-V out-of-order multicore processor capable of running bare-metal workloads and Linux images.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+            },},{id: "projects-parametric-risc-v-multi-core-emulator",
+          title: 'Parametric RISC-V multi-core emulator',
+          description: "RISC-V multi-core emulator capable of booting both Linux and bare-metal programs",
           section: "Projects",handler: () => {
               window.location.href = "/projects/3_project/";
             },},{id: "projects-project-4",
