@@ -405,16 +405,16 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-started-as-an-fpga-design-engineer-intern-at-apex-compute-california-designing-high-performance-reconfigurable-architectures",
+          title: 'Started as an FPGA Design Engineer Intern at Apex Compute (California), designing high-performance...',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
+          section: "News",},{id: "news-two-papers-published-at-ieee-hpec-2025",
+          title: 'Two papers published at IEEE HPEC 2025',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-released-chiron-a-fully-verified-out-of-order-risc-v-processor-that-boots-linux-and-astra-a-physics-accurate-leo-satellite-network-simulator",
+          title: 'Released Chiron, a fully verified out-of-order RISC-V processor that boots Linux, and ASTRA,...',
           description: "",
           section: "News",},{id: "projects-multi-threaded-risc-v-benchmark-framework",
           title: 'Multi-threaded RISC-V Benchmark Framework',
@@ -451,6 +451,16 @@ ninja.data = [{
           description: "Function generator capable of producing sine, square, triangular, and sawtooth waveforms with adjustable duty cycle",
           section: "Projects",handler: () => {
               window.location.href = "/projects/7_project/";
+            },},{id: "projects-chiron-an-out-of-order-risc-v-processor",
+          title: 'Chiron: An Out-of-Order RISC-V Processor',
+          description: "A fully verified, teaching-grade out-of-order RV64IMA core in Chisel that boots Linux and proves correctness in lock-step against a golden model.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8_project/";
+            },},{id: "projects-astra-autonomous-satellite-traffic-amp-routing-architecture",
+          title: 'ASTRA: Autonomous Satellite Traffic &amp;amp; Routing Architecture',
+          description: "A physics-accurate LEO satellite constellation simulator in pure C11 with custom OpenGL visualization, dynamic-topology routing, and machine-precision validation.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_project/";
             },},{
         id: 'social-email',
         title: 'email',
