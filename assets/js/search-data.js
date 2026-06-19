@@ -9,12 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/";
     },
-  },{id: "nav-blog",
-          title: "blog",
-          description: "",
+  },{id: "nav-research",
+          title: "research",
+          description: "What I work on, why it matters, and where I want to take it.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/blog/";
+            window.location.href = "/research/";
           },
         },{id: "nav-publications",
           title: "publications",
@@ -29,6 +29,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
+          },
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/blog/";
           },
         },{id: "nav-cv",
           title: "cv",
@@ -108,8 +115,8 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-started-as-an-fpga-design-engineer-intern-at-apex-compute-california-designing-high-performance-reconfigurable-architectures",
-          title: 'Started as an FPGA Design Engineer Intern at Apex Compute (California), designing high-performance...',
+            },},{id: "news-joined-apex-compute-california-as-a-full-time-fpga-design-engineer-designing-high-performance-reconfigurable-architectures",
+          title: 'Joined Apex Compute (California) as a full-time FPGA Design Engineer, designing high-performance reconfigurable...',
           description: "",
           section: "News",},{id: "news-two-papers-published-at-ieee-hpec-2025",
           title: 'Two papers published at IEEE HPEC 2025',
