@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: FPGA Design Engineer Intern at Apex Compute
+subtitle: FPGA Design Engineer at Apex Compute
 
 profile:
   align: right
@@ -25,9 +25,9 @@ latest_posts:
 ---
 
 # Hi 👋!
-I broadly work on problems at the intersection of **computer architecture**, **reconfigurable computing**, and **AI acceleration**. My work explores how we can push the limits of performance and efficiency in systems.
+I work in **computer architecture**, on **co-designing hardware and algorithms for efficient foundation-model computing** — making large transformers and their successors tractable in compute, memory, and energy. I build and verify real processors and accelerators from the RTL up, spanning **reconfigurable computing** and **AI acceleration**. ([read more about my research →](/research/))
 
-Currently, I’m an **FPGA Design Engineer Intern at [Apex Compute](https://www.apexcompute.com//)** (California), where I design high-performance reconfigurable architectures.  
+Currently, I’m a **full-time FPGA Design Engineer at [Apex Compute](https://www.apexcompute.com/)** (California), where I design high-performance reconfigurable architectures.  
 Previously, I was a **Research Scholar at the [National University of Singapore (NUS)](https://www.nus.edu.sg/)**, where I implemented a **3DRA CGRA** on FPGA running at **650 MHz** and optimized data communication for a **100 Gbps TCP/IP Offload Engine**.
 
 I received my **BSc (Hons) in Electronics and Telecommunications Engineering** from the **[University of Moratuwa](https://ent.uom.lk/)**, where I led projects on **cache-coherent, out-of-order multi-core RISC-V CPUs** and **hardware-accelerated systems for AI and scientific computing**.
