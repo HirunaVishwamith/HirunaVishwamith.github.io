@@ -18,14 +18,14 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "publications by categories in reversed chronological order.",
+          description: "Peer-reviewed publications on hardware-accelerated transformers, neuromorphic computing, and FPGA-based systems — IEEE HPEC, CHEP, ISARC, and INTCEC.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of my cool projects.",
+          description: "Selected projects in computer architecture and accelerated computing — a verified out-of-order RISC-V processor, a cache-coherent multicore CPU, a physics-accurate LEO satellite-network simulator, and custom SIMD hardware.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -39,7 +39,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "cv",
-          description: "",
+          description: "Curriculum vitae of Hiruna Vishwamith — computer architecture, FPGA design, and AI acceleration. Education, publications, awards, and selected projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
