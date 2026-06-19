@@ -1,81 +1,124 @@
 ---
 layout: page
-title: project 8
-description: an other project with a background image and giscus comments
-img: assets/img/9.jpg
-importance: 8
+title: "Chiron: An Out-of-Order RISC-V Processor"
+description: A fully verified, teaching-grade out-of-order RV64IMA core in Chisel that boots Linux and proves correctness in lock-step against a golden model.
+img: assets/img/chiron.png
+importance: 1
 category: work
-giscus_comments: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Project Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+**Chiron** is a complete, fully-verified **64-bit out-of-order (OoO) RISC-V processor** written in **Chisel**. It was built to answer a question that sits at the heart of computer-architecture education and research: _can a microarchitecture be simultaneously aggressive enough to be interesting, transparent enough to teach from, and rigorous enough to trust?_
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+Most educational cores force a compromise — either a simplified in-order pipeline that hides the mechanisms that make modern CPUs fast, or an opaque industrial design that is impossible to read. Chiron rejects that trade-off. It implements a modern speculative, out-of-order machine with register renaming, dynamic scheduling, and a coherent multi-level cache hierarchy, while keeping **every line of RTL readable and every committed instruction verified** against a golden C++ reference model.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+The result is a processor that **boots Linux** and runs bare-metal graphics demos, yet whose architectural state is checked **cycle-by-cycle, instruction-by-instruction** for correctness.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+---
+
+### Motivation
+
+Out-of-order execution is the foundation of essentially every high-performance processor shipped today, yet it is notoriously difficult to learn by building. The hard parts — renaming, wake-up/select logic, precise exceptions through a reorder buffer, and memory ordering — are exactly the parts that simplified teaching cores omit.
+
+Chiron was designed to close that gap. The goals were deliberate:
+
+- **Transparency** — clean, well-structured Chisel that a student or researcher can read, modify, and extend.
+- **Realism** — a genuine OoO pipeline with speculation and a coherent memory system, not a toy.
+- **Provable correctness** — confidence backed by lock-step verification rather than spot-checked test cases.
+
+---
+
+### Microarchitecture
+
+Chiron implements the **RV64IMA** ISA on a classic modern pipeline — _fetch → decode/rename → issue → execute → memory → commit_ — where execution is fully decoupled from in-order retirement.
+
+| Stage / Unit            | Design                                                                 |
+| ----------------------- | --------------------------------------------------------------------- |
+| **Register renaming**   | 64-entry physical register file eliminating false dependencies         |
+| **Issue**               | Centralized 8-entry issue queue with dynamic wake-up logic              |
+| **Reorder buffer**      | 16-entry ROB enabling out-of-order execution with precise commit        |
+| **Commit**              | 4-wide, in-order retirement preserving architectural state              |
+| **Integer / Mul-Div**   | Radix-4 divider (2 bits/cycle) alongside the integer ALU pipeline       |
+
+**Branch prediction** is a two-level effort: a **bimodal predictor** paired with a 2-way, 64-set **BTB** for fast steering, backed by a **4-table TAGE predictor** with geometrically varying history lengths for accuracy on hard-to-predict branches.
+
+**Memory subsystem:**
+
+- Split **L1 instruction/data caches** (2-way, 64 sets each)
+- A **non-blocking L2 cache** with **MSHRs** for multiple outstanding misses and **pseudo-LRU** replacement
+- An **ACE-compatible coherent interconnect**, laying the groundwork for multicore coherence
+
+---
+
+### Verification — The Core Contribution
+
+Chiron's defining feature is its verification methodology. Rather than relying on a handful of directed tests, the processor runs in **lock-step against a golden C++ architectural model**: after **every committed instruction**, the RTL's architectural state (register file, PC, memory) is compared against the reference. Any divergence halts simulation at the exact offending instruction.
+
+- ✅ **All 84 official RISC-V ISA tests pass**
+- ✅ **Boots Linux** end-to-end
+- ✅ Runs bare-metal workloads with **cycle-accurate** correctness
+
+This approach demonstrates that **pedagogical clarity and verification rigor are not in conflict** — the same design that is easy to read is also provably correct.
+
+---
+
+### Performance
+
+Performance was improved through staged microarchitectural optimization, with each step measured rather than assumed:
+
+- **0.272 IPC** on a vector-add workload — a **2.18× improvement** over the baseline through successive scheduling and memory optimizations
+- Target operating frequency of **75 MHz**
+- Profiling shows the remaining bottlenecks are **latency-bound** (load and divide latency), **not width-limited** — a precise, data-driven characterization that points directly at the next round of improvements
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/chiron_profile.png" title="Chiron performance profiling report" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+  Profiling report tracking IPC across optimization stages, isolating latency-bound load and divide behavior as the dominant remaining bottleneck.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
+### Demonstration
 
-```html
+To show the core running real, observable workloads on RTL, Chiron renders a **bare-metal "Doom-fire" effect directly from the processor's UART** — an 80×50 grid of half-block glyphs with scrolling embers, computed entirely on the simulated hardware (`make fire`).
+
 <div class="row justify-content-sm-center">
   <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+    {% include figure.liquid loading="lazy" path="assets/img/chiron_fire.gif" title="Bare-metal fire effect rendered live on Chiron RTL via UART" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
+<div class="caption">
+  A real-time fire effect rendered live from the core's UART on actual RTL — a tangible demonstration of correct, end-to-end execution.
+</div>
 
-{% endraw %}
+---
+
+### Technical Summary
+
+| Aspect              | Detail                                                              |
+| ------------------- | ------------------------------------------------------------------ |
+| **ISA**             | RV64IMA (64-bit RISC-V, integer + multiply/divide)                 |
+| **Microarch.**      | Out-of-order, speculative, register-renamed                        |
+| **HDL**             | Chisel 3.5.4 (Scala-based)                                          |
+| **Simulation**      | Verilator                                                          |
+| **Golden model**    | C++ architectural reference for lock-step verification              |
+| **Build**           | SBT + Make-driven orchestration                                    |
+| **Verification**    | Per-instruction lock-step; all 84 RISC-V ISA tests pass            |
+| **Milestones**      | Boots Linux; runs bare-metal graphics demos                        |
+
+---
+
+### Skills Demonstrated
+
+Out-of-order microarchitecture · register renaming & dynamic scheduling · branch prediction (bimodal, BTB, TAGE) · non-blocking caches & MSHRs · cache coherence (ACE) · Chisel/Scala RTL design · Verilator-based verification · golden-model co-simulation · performance profiling & optimization · RISC-V toolchain and Linux bring-up.
+
+---
+
+[View Chiron on GitHub](https://github.com/HirunaVishwamith/Chiron)
+
+---

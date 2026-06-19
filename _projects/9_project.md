@@ -1,80 +1,102 @@
 ---
 layout: page
-title: project 9
-description: another project with an image 🎉
-img: assets/img/6.jpg
-importance: 9
-category: fun
+title: "ASTRA: Autonomous Satellite Traffic & Routing Architecture"
+description: A physics-accurate LEO satellite constellation simulator in pure C11 with custom OpenGL visualization, dynamic-topology routing, and machine-precision validation.
+img: assets/img/astra_dashboard.png
+importance: 6
+category: work
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+### Project Overview
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+**ASTRA** (*Autonomous Satellite Traffic & Routing Architecture*) is a research-grade simulator for **Low Earth Orbit (LEO) satellite constellations**, written **entirely in C11** with a **hand-rolled OpenGL renderer** and **zero external dependencies** beyond system libraries. It models how orbital mechanics drive **dynamic network topology**, and measures the **routing efficiency and traffic performance** that result.
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+LEO mega-constellations (Starlink, Kuiper, and the like) present a networking problem that classical simulators handle poorly: the topology is never static. Satellites move at orbital velocity, inter-satellite links form and break continuously, and ground visibility changes by the second. ASTRA tackles this head-on by coupling **real two-body orbital propagation** to a **per-timestep network model**, so routing and traffic decisions are made over a topology that is physically correct at every instant.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+---
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+### Motivation
+
+Most network simulators either treat satellite links as a fixed graph or bolt on a coarse mobility model. Neither captures what actually makes LEO networking hard: a topology that is **continuously reshaped by orbital geometry**, with line-of-sight occlusion, elevation masking, and distance-dependent link budgets all changing in lock-step.
+
+ASTRA was built to be **physics-accurate first** — getting the orbital mechanics right to machine precision — and then to study routing, resilience, and traffic delivery on top of that faithful foundation.
+
+---
+
+### Key Features
+
+* **Physics-accurate orbital mechanics**
+  A **universal-variables Kepler solver** propagates real two-body dynamics, with full **ECI ↔ ECEF** coordinate transforms and **line-of-sight occlusion** that accounts for Earth's geometry.
+
+* **Dynamic network modeling**
+  Topology is **recomputed every timestep**, stored as a **CSR sparse adjacency matrix** for efficient queries, with **inverse-square link-budget** calculations governing which links are viable.
+
+* **Routing algorithms**
+  Both **Dijkstra** (lazy-heap) and **Distance-Vector** implementations produce **all-pairs next-hop tables** synchronously, enabling direct comparison of routing strategies on identical topologies.
+
+* **Traffic generation & metrics**
+  **Uniform, hotspot, and burst** traffic models feed a **zero-allocation packet pool**, measuring **delivery ratio, latency, hop count, and link utilization**.
+
+* **Failure & resilience simulation**
+  Scripted **link blackouts, latency spikes, loss scaling, and node strikes**, with automatic system reboot — purpose-built for network-resilience studies.
+
+* **Custom OpenGL visualization**
+  A from-scratch **3D viewer** (GLX/EGL) renders a graticule globe with **ISL and ground links colored by utilization**, interactive orbit-camera controls, and **headless rendering with PNG export** for batch studies.
 
 <div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
+  <div class="col-sm-10 mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/astra_dashboard.png" title="ASTRA real-time constellation dashboard rendered in custom OpenGL" class="img-fluid rounded z-depth-1" %}
+  </div>
 </div>
 <div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
+  The ASTRA dashboard, rendered entirely in hand-written OpenGL — inter-satellite and ground links colored by utilization over a graticule globe, with live routing and traffic metrics.
 </div>
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+---
 
-{% raw %}
+### Architecture
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+ASTRA is built as a set of **independent compilation units** — orbit mechanics, graph operations, routing, ground stations, traffic generation, failures, and metrics — each with a focused responsibility. A standout engineering detail is the **lock-free synchronization boundary** between the simulation and rendering threads, which lets the model advance and the viewer draw **simultaneously, with no data races**. Operational realism comes from **ground-station elevation masking** and **per-link bandwidth budgeting**.
 
-{% endraw %}
+---
+
+### Validation — Correct to Machine Precision
+
+ASTRA treats correctness as a first-class deliverable, validated against a frozen reference rather than assumed:
+
+- ✅ **Orbital parity:** the C implementation matches the original Python prototype to **3 × 10⁻¹² km** — machine precision — on orbital propagation.
+- ✅ **Routing parity:** **bit-exact Dijkstra** results across **30,000+ path pairs**.
+- ✅ **Thread safety:** the simulation–render pipeline is validated clean under **ThreadSanitizer**.
+- ✅ **Regression suite:** **9 verification tests** check output against frozen reference vectors.
+
+The project also ships profiling tooling for **100–1024 satellite scaling studies** and scripted failure scenarios for resilience research.
+
+---
+
+### Technical Summary
+
+| Aspect              | Detail                                                                |
+| ------------------- | --------------------------------------------------------------------- |
+| **Language**        | C11 (~99% of codebase), zero external dependencies                    |
+| **Physics**         | Universal-variables Kepler solver; ECI/ECEF transforms; LOS occlusion |
+| **Graph storage**   | CSR sparse adjacency, recomputed per timestep                         |
+| **Routing**         | Dijkstra (lazy heap) + Distance-Vector, all-pairs next-hop            |
+| **Traffic**         | Uniform / hotspot / burst, zero-allocation packet pools               |
+| **Visualization**   | Hand-rolled OpenGL (GLX/EGL), 3D viewer with PNG export               |
+| **Concurrency**     | Lock-free sim/render boundary, ThreadSanitizer-clean                  |
+| **Validation**      | 3e-12 km orbital parity; bit-exact routing over 30k+ pairs            |
+| **Scale studies**   | 100–1024 satellites                                                   |
+| **License**         | MIT (academic use)                                                    |
+
+---
+
+### Skills Demonstrated
+
+Orbital mechanics & numerical methods · graph algorithms and routing · high-performance systems programming in C · cache-friendly data structures (CSR, packet pools) · lock-free concurrency · real-time 3D graphics from scratch (OpenGL/GLX/EGL) · rigorous numerical validation and regression testing · network modeling and resilience analysis.
+
+---
+
+[View ASTRA on GitHub](https://github.com/HirunaVishwamith/ASTRA)
+
+---

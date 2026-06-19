@@ -11,12 +11,12 @@ profile:
   more_info: >
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: false # includes social icons at the bottom of the page
+social: true # includes social icons at the bottom of the page
 
-# announcements:
-#   enabled: true # includes a list of news items
-#   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-#   limit: 5 # leave blank to include all the news in the `_news` folder
+announcements:
+  enabled: true # includes a list of news items
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
   enabled: true
@@ -30,7 +30,7 @@ I broadly work on problems at the intersection of **computer architecture**, **r
 Currently, I’m an **FPGA Design Engineer Intern at [Apex Compute](https://www.apexcompute.com//)** (California), where I design high-performance reconfigurable architectures.  
 Previously, I was a **Research Scholar at the [National University of Singapore (NUS)](https://www.nus.edu.sg/)**, where I implemented a **3DRA CGRA** on FPGA running at **650 MHz** and optimized data communication for a **100 Gbps TCP/IP Offload Engine**.
 
-I’m received my **BSc (Hons) in Electronics and Telecommunications Engineering** at the **[University of Moratuwa](https://ent.uom.lk/)**, where I lead projects on **cache-coherent, out-of-order multi-core RISC-V CPUs** and **hardware-accelerated systems for AI and scientific computing**.
+I received my **BSc (Hons) in Electronics and Telecommunications Engineering** from the **[University of Moratuwa](https://ent.uom.lk/)**, where I led projects on **cache-coherent, out-of-order multi-core RISC-V CPUs** and **hardware-accelerated systems for AI and scientific computing**.
 
 My research has been published at venues like **IEEE HPEC**, **CHEP**, **ISARC**, and **INTCEC**, focusing on **neuromorphic computing**, **FPGA acceleration**, and **transformer-based architectures** for real-time scientific applications.  
 
@@ -43,7 +43,7 @@ When I’m not optimizing FPGA designs, I like exploring new AI models, and occa
 ### research highlights:
 
 <ul>
-  <li><b>Two paper published</b>: My latest papers <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305485_Hardware-Accelerated_Transformer_Framework_for_Real-Time_Battery_SoH_Estimation/links/68bcf9f86fe8e57ec8e2f9db/Hardware-Accelerated-Transformer-Framework-for-Real-Time-Battery-SoH-Estimation.pdf">Hardware-Accelerated Transformer Framework for Real-Time Battery SoH Estimation</a> (2025), <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305489_Exploring_Neuromorphic_Computing_with_Loihi-2_for_High-Performance_CFD_Simulations/links/68bcf9c56fe8e57ec8e2f9d9/Exploring-Neuromorphic-Computing-with-Loihi-2-for-High-Performance-CFD-Simulations.pdf">Exploring Neuromorphic Computing with Loihi-2 for High-Performance CFD Simulations</a> (2025), published on venue IEEE HPEC 2025.</li>
+  <li><b>Two papers published</b>: My latest papers <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305485_Hardware-Accelerated_Transformer_Framework_for_Real-Time_Battery_SoH_Estimation/links/68bcf9f86fe8e57ec8e2f9db/Hardware-Accelerated-Transformer-Framework-for-Real-Time-Battery-SoH-Estimation.pdf">Hardware-Accelerated Transformer Framework for Real-Time Battery SoH Estimation</a> (2025), <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305489_Exploring_Neuromorphic_Computing_with_Loihi-2_for_High-Performance_CFD_Simulations/links/68bcf9c56fe8e57ec8e2f9d9/Exploring-Neuromorphic-Computing-with-Loihi-2-for-High-Performance-CFD-Simulations.pdf">Exploring Neuromorphic Computing with Loihi-2 for High-Performance CFD Simulations</a> (2025), published on venue IEEE HPEC 2025.</li>
 
   <li><b>End-to-End Multicore Framework</b>: developed an end-to-end, out-of-order, cache-coherent multicore RISC-V processor for FPGA capable of running bare-metal C programs and Linux images.</li>
 </ul>
