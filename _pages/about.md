@@ -40,12 +40,18 @@ When I’m not optimizing FPGA designs, I like exploring new AI models, and occa
 
 ---
 
-### research highlights:
+### selected highlights:
 
 <ul>
-  <li><b>Two papers published</b>: My latest papers <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305485_Hardware-Accelerated_Transformer_Framework_for_Real-Time_Battery_SoH_Estimation/links/68bcf9f86fe8e57ec8e2f9db/Hardware-Accelerated-Transformer-Framework-for-Real-Time-Battery-SoH-Estimation.pdf">Hardware-Accelerated Transformer Framework for Real-Time Battery SoH Estimation</a> (2025), <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305489_Exploring_Neuromorphic_Computing_with_Loihi-2_for_High-Performance_CFD_Simulations/links/68bcf9c56fe8e57ec8e2f9d9/Exploring-Neuromorphic-Computing-with-Loihi-2-for-High-Performance-CFD-Simulations.pdf">Exploring Neuromorphic Computing with Loihi-2 for High-Performance CFD Simulations</a> (2025), published on venue IEEE HPEC 2025.</li>
+  <li><b>5 peer-reviewed publications</b> across <b>IEEE HPEC, CHEP, ISARC, and INTCEC</b> on hardware-accelerated transformers and neuromorphic computing — including, most recently, the <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305485_Hardware-Accelerated_Transformer_Framework_for_Real-Time_Battery_SoH_Estimation/links/68bcf9f86fe8e57ec8e2f9db/Hardware-Accelerated-Transformer-Framework-for-Real-Time-Battery-SoH-Estimation.pdf">Hardware-Accelerated Transformer Framework for Real-Time Battery SoH Estimation</a> and <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305489_Exploring_Neuromorphic_Computing_with_Loihi-2_for_High-Performance_CFD_Simulations/links/68bcf9c56fe8e57ec8e2f9d9/Exploring-Neuromorphic-Computing-with-Loihi-2-for-High-Performance-CFD-Simulations.pdf">Exploring Neuromorphic Computing with Loihi-2 for High-Performance CFD Simulations</a>, both at <b>IEEE HPEC 2025</b>.</li>
 
-  <li><b>End-to-End Multicore Framework</b>: developed an end-to-end, out-of-order, cache-coherent multicore RISC-V processor for FPGA capable of running bare-metal C programs and Linux images.</li>
+  <li><b><a href="/projects/">Chiron</a> — a fully-verified out-of-order RISC-V processor</b>: a teaching-grade RV64IMA core in Chisel with register renaming, TAGE branch prediction, and a coherent non-blocking cache hierarchy. Every committed instruction is checked in <b>lock-step against a golden model</b> — all 84 RISC-V ISA tests pass, and it <b>boots Linux</b>.</li>
+
+  <li><b>End-to-end cache-coherent multicore</b>: an out-of-order, cache-coherent multicore RISC-V processor taken from RTL to FPGA, running bare-metal C programs and booting Linux images.</li>
+
+  <li><b><a href="/projects/">ASTRA</a> — physics-accurate LEO satellite-network simulation</b>: a constellation simulator in pure C11 coupling real Kepler orbital mechanics to per-timestep routing, validated to <b>machine precision</b> (3×10⁻¹² km orbital parity, bit-exact routing over 30k+ paths) with a hand-rolled OpenGL renderer.</li>
+
+  <li><b>Competition results</b>: <b>2nd place in latency</b> at the <a href="https://tinymlcontest.github.io/TinyML-Design-Contest-2023/Winners.html">ACM/IEEE TinyML Design Contest @ ICCAD 2023</a>, and <b>finalist</b> at the <a href="https://alregib.ece.gatech.edu/">IEEE VIP Cup 2023</a>.</li>
 </ul>
 <!-- in  and <a href="https://arxiv.org/abs/2302.04449">guiding</a> agent behavior in different data modalities</b> to create more reliable, interpretable, and less data hungry AI models. I'm also very interested -->
 
