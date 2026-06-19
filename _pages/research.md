@@ -27,8 +27,8 @@ I approach this the way I approach everything: **from the RTL up**. I build and 
 </div>
 <div class="row mt-3">
   <div class="col-md-6">
-    <h4>🔬 Neuromorphic & emerging hardware</h4>
-    <p>Spiking neural networks and event-driven architectures (e.g. Loihi-2) applied to signal processing, particle physics, and dense numerical workloads like CFD.</p>
+    <h4>🧮 Memory systems & dataflow</h4>
+    <p>The memory wall is the binding constraint for modern AI: attention is memory-bound and energy is dominated by data movement. I work on memory hierarchies, on-chip dataflow, and bandwidth-aware accelerator design.</p>
   </div>
   <div class="col-md-6">
     <h4>🛠️ HW–algorithm co-design for foundation models</h4>
@@ -48,7 +48,7 @@ Modern computing is increasingly **bottlenecked not by algorithms but by the har
 
 **At the model level**, my published work maps modern AI onto custom and emerging hardware: hardware-accelerated **transformers** for real-time battery state-of-health estimation, and **neuromorphic** computing — spiking networks merged with attention — for audio signal processing, FPGA-based particle physics, and CFD. This work has appeared at **IEEE HPEC, CHEP, ISARC, and INTCEC**.
 
-**Where I want to go.** I want to pursue a PhD focused on **co-designing hardware and algorithms for efficient foundation-model computing.** The cost of large models is now an architecture problem: attention is memory-bound, inference is latency-critical, and energy is the binding constraint at scale. I want to attack this from both sides at once — rethinking accelerators, memory hierarchies, and dataflows alongside the algorithms (quantization, sparsity, attention variants, and emerging neuromorphic/event-driven formulations) that run on them — and to keep the resulting designs *verifiable and trustworthy* by construction, not just fast in the common case. My experience building and verifying real processors and accelerators from RTL up is what lets me pursue that co-design credibly, in hardware rather than only in simulation.
+**Where I want to go.** I want to pursue a PhD focused on **co-designing hardware and algorithms for efficient foundation-model computing.** The cost of large models is now an architecture problem: attention is memory-bound, inference is latency-critical, and energy is the binding constraint at scale. I want to attack this from both sides at once — rethinking accelerators, memory hierarchies, and dataflows alongside the algorithms (quantization, sparsity, and attention variants) that run on them — and to keep the resulting designs *verifiable and trustworthy* by construction, not just fast in the common case. My experience building and verifying real processors and accelerators from RTL up is what lets me pursue that co-design credibly, in hardware rather than only in simulation.
 
 ---
 

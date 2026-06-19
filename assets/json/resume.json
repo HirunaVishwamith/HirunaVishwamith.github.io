@@ -5,7 +5,7 @@
     "image": "",
     "email": "hvishwamith@gmail.com",
     "url": "https://HirunaVishwamith.github.io",
-    "summary": "Electronics & Telecommunications engineer working at the intersection of computer architecture, reconfigurable computing, and AI acceleration. I design and verify processors and accelerators from RTL to FPGA, and map modern AI and neuromorphic models onto custom hardware. 5 peer-reviewed publications (IEEE HPEC, CHEP, ISARC, INTCEC).",
+    "summary": "Electronics & Telecommunications engineer working at the intersection of computer architecture, reconfigurable computing, and AI acceleration. I design and verify processors and accelerators from RTL to FPGA, and map modern AI models onto custom hardware. 5 peer-reviewed publications (IEEE HPEC, CHEP, ISARC, INTCEC).",
     "profiles": [
       {
         "network": "GitHub",
@@ -165,7 +165,7 @@
       "name": "AI & Machine Learning",
       "level": "Advanced",
       "icon": "fa-solid fa-brain",
-      "keywords": ["Transformers", "Spiking Neural Networks", "Hardware acceleration", "Neuromorphic computing"]
+      "keywords": ["Transformers", "Hardware acceleration", "Model quantization & sparsity", "Efficient inference"]
     }
   ],
   "languages": [
@@ -187,7 +187,7 @@
       "keywords": [
         "Processor microarchitecture",
         "Reconfigurable & accelerated computing",
-        "Neuromorphic & emerging hardware",
+        "Memory systems & dataflow",
         "Hardware-algorithm co-design"
       ]
     }

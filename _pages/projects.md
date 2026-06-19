@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: A growing collection of my cool projects.
+description: Selected projects in computer architecture and accelerated computing — a verified out-of-order RISC-V processor, a cache-coherent multicore CPU, a physics-accurate LEO satellite-network simulator, and custom SIMD hardware.
 nav: true
 nav_order: 3
 display_categories: [work, fun]
