@@ -11,7 +11,7 @@ ninja.data = [{
     },
   },{id: "nav-research",
           title: "research",
-          description: "What I work on, why it matters, and where I want to take it.",
+          description: "Co-designing hardware and algorithms for efficient foundation-model computing.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/research/";
@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "Selected projects in computer architecture and accelerated computing — a verified out-of-order RISC-V processor, a cache-coherent multicore CPU, a physics-accurate LEO satellite-network simulator, and custom SIMD hardware.",
+          description: "Processors, accelerators, and the hardware underneath them — built from the RTL up, and measured rather than asserted.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -44,11 +44,22 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-verifying-an-out-of-order-risc-v-core-in-lock-step",
+        },{id: "post-where-the-joules-actually-go-in-a-systolic-array",
+        
+          title: "Where the Joules Actually Go in a Systolic Array",
+        
+        description: "Talos steps a real PE mesh one clock at a time, and the numbers that fall out explain most of the last fifteen years of accelerator architecture.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/where-the-joules-go-systolic-arrays/";
+          
+        },
+      },{id: "post-verifying-an-out-of-order-risc-v-core-in-lock-step",
         
           title: "Verifying an Out-of-Order RISC-V Core in Lock-Step",
         
-        description: "How Chiron proves a speculative, out-of-order processor correct — instruction by instruction — against a golden model, without sacrificing readability.",
+        description: "How Chiron proves a speculative, out-of-order, quad-core processor correct — instruction by instruction, on every hart — against a golden model, without sacrificing readability.",
         section: "Posts",
         handler: () => {
           
@@ -81,33 +92,11 @@ ninja.data = [{
         
           title: "An End-to-End Cache-Coherent, Out-of-Order RISC-V Multicore",
         
-        description: "Building a modular multicore RISC-V processor — out-of-order cores, a coherent cache hierarchy, and enough of a system to boot Linux — from RTL all the way to FPGA.",
+        description: "How a final-year project — out-of-order cores, a coherent cache hierarchy, and enough of a system to boot Linux — went from Chisel RTL onto an FPGA, and became the processor I now call Chiron.",
         section: "Posts",
         handler: () => {
           
             window.location.href = "/blog/2025/cache-coherent-ooo-multicore-riscv/";
-          
-        },
-      },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-        
-          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-          
-        },
-      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-        
-          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
           
         },
       },{id: "books-the-godfather",
@@ -123,54 +112,62 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/news/announcement_2/";
-            },},{id: "news-released-chiron-a-fully-verified-out-of-order-risc-v-processor-that-boots-linux-and-astra-a-physics-accurate-leo-satellite-network-simulator",
-          title: 'Released Chiron, a fully verified out-of-order RISC-V processor that boots Linux, and ASTRA,...',
+            },},{id: "news-released-chiron-a-lock-step-verified-out-of-order-risc-v-processor-and-astra-a-physics-accurate-leo-satellite-network-simulator",
+          title: 'Released Chiron, a lock-step verified out-of-order RISC-V processor, and ASTRA, a physics-accurate LEO...',
           description: "",
-          section: "News",},{id: "projects-multi-threaded-risc-v-benchmark-framework",
-          title: 'Multi-threaded RISC-V Benchmark Framework',
-          description: "A portable and extensible RISC-V benchmark suite for multicore processors.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-cache-coherent-out-of-order-risc-v-multicore-processor",
-          title: 'Cache-Coherent, Out-of-Order RISC-V Multicore Processor',
-          description: "A modular, cache-coherent RISC-V out-of-order multicore processor capable of running bare-metal workloads and Linux images.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-parametric-risc-v-multi-core-emulator",
-          title: 'Parametric RISC-V multi-core emulator',
-          description: "RISC-V multi-core emulator capable of booting both Linux and bare-metal programs",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-parallel-system-bus-on-fpga",
-          title: 'Parallel System Bus on FPGA',
-          description: "Multi-master, multi-slave bus architecture enabling efficient parallel communication on DE0-Nano FPGA",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-parameterized-simd-processor-for-matrix-operations",
-          title: 'Parameterized SIMD Processor for Matrix Operations',
-          description: "Fully parameterized SIMD processor with custom ISA for matrix arithmetic and hardware acceleration on FPGA",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-reciprocal-frequency-counter",
-          title: 'Reciprocal Frequency Counter',
-          description: "A high-precision reciprocal frequency counter measuring signals from 1Hz to 100MHz with up to 100V amplitude",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-analog-function-generator",
-          title: 'Analog Function Generator',
-          description: "Function generator capable of producing sine, square, triangular, and sawtooth waveforms with adjustable duty cycle",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-chiron-an-out-of-order-risc-v-processor",
-          title: 'Chiron: An Out-of-Order RISC-V Processor',
-          description: "A fully verified, teaching-grade out-of-order RV64IMA core in Chisel that boots Linux and proves correctness in lock-step against a golden model.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
+          section: "News",},{id: "news-released-talos-a-cycle-accurate-systolic-array-simulator-that-shows-where-the-cycles-and-the-joules-actually-go-validated-against-published-tpuv1-silicon-️",
+          title: 'Released Talos — a cycle-accurate systolic array simulator that shows where the cycles...',
+          description: "",
+          section: "News",},{id: "news-chiron-boots-quad-core-linux-smp",
+          title: 'Chiron boots quad-core Linux SMP',
+          description: "",
+          section: "News",handler: () => {
+              window.location.href = "/news/announcement_5/";
             },},{id: "projects-astra-autonomous-satellite-traffic-amp-routing-architecture",
           title: 'ASTRA: Autonomous Satellite Traffic &amp;amp; Routing Architecture',
           description: "A physics-accurate LEO satellite constellation simulator in pure C11 with custom OpenGL visualization, dynamic-topology routing, and machine-precision validation.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
+              window.location.href = "/projects/astra/";
+            },},{id: "projects-chiron-quad-core-out-of-order-risc-v",
+          title: 'Chiron — Quad-Core Out-of-Order RISC-V',
+          description: "Four out-of-order RV64IMA cores in Chisel behind an ACE-coherent cache hierarchy — verified instruction-by-instruction against a golden model, booting Linux SMP to an interactive shell, and deployed to FPGA.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/chiron/";
+            },},{id: "projects-reciprocal-frequency-counter",
+          title: 'Reciprocal Frequency Counter',
+          description: "A high-precision reciprocal frequency counter measuring signals from 1Hz to 100MHz with up to 100V amplitude",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/frequency-counter/";
+            },},{id: "projects-analog-function-generator",
+          title: 'Analog Function Generator',
+          description: "Function generator capable of producing sine, square, triangular, and sawtooth waveforms with adjustable duty cycle",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/function-generator/";
+            },},{id: "projects-parallel-system-bus-on-fpga",
+          title: 'Parallel System Bus on FPGA',
+          description: "Multi-master, multi-slave bus architecture enabling efficient parallel communication on DE0-Nano FPGA",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/parallel-system-bus/";
+            },},{id: "projects-multi-threaded-risc-v-benchmark-framework",
+          title: 'Multi-threaded RISC-V Benchmark Framework',
+          description: "A portable and extensible RISC-V benchmark suite for multicore processors.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/riscv-benchmark-suite/";
+            },},{id: "projects-parametric-risc-v-multi-core-emulator",
+          title: 'Parametric RISC-V multi-core emulator',
+          description: "RISC-V multi-core emulator capable of booting both Linux and bare-metal programs",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/riscv-multicore-emulator/";
+            },},{id: "projects-parameterized-simd-processor-for-matrix-operations",
+          title: 'Parameterized SIMD Processor for Matrix Operations',
+          description: "Fully parameterized SIMD processor with custom ISA for matrix arithmetic and hardware acceleration on FPGA",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/simd-matrix-processor/";
+            },},{id: "projects-talos-systolic-array-simulator",
+          title: 'Talos — Systolic Array Simulator',
+          description: "A cycle-accurate systolic-array and dataflow simulator in pure Python — it steps a real PE mesh one clock at a time and tells you exactly where the cycles and the joules went.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/talos/";
             },},{
         id: 'social-email',
         title: 'email',
