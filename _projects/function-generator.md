@@ -4,7 +4,8 @@ title: Analog Function Generator
 description: Function generator capable of producing sine, square, triangular, and sawtooth waveforms with adjustable duty cycle
 img: assets/img/analog_fun.png
 importance: 2
-category: fun
+category: hardware
+github: https://github.com/HirunaVishwamith/Analog-Function-generator
 related_publications: false
 ---
 

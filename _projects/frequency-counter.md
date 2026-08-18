@@ -4,7 +4,8 @@ title: Reciprocal Frequency Counter
 description: A high-precision reciprocal frequency counter measuring signals from 1Hz to 100MHz with up to 100V amplitude
 img: assets/img/FC_1.jpg
 importance: 1
-category: fun
+category: hardware
+github: https://github.com/HirunaVishwamith/Reciprocal-Freqency-Counter
 related_publications: false
 ---
 

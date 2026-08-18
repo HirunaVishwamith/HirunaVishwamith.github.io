@@ -3,8 +3,9 @@ layout: page
 title: Parametric RISC-V multi-core emulator
 description: RISC-V multi-core emulator capable of booting both Linux and bare-metal programs
 img: assets/img/multi_core.png
-importance: 3
-category: work
+importance: 2
+category: processors
+github: https://github.com/HirunaVishwamith/fyp18-riscv-emulator
 related_publications: false
 ---
 

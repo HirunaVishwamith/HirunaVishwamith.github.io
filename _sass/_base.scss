@@ -689,12 +689,54 @@ footer.sticky-bottom {
   }
 
   h2.category {
-    color: var(--global-divider-color);
+    color: var(--global-theme-color);
     border-bottom: 1px solid var(--global-divider-color);
     padding-top: 0.5rem;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    text-align: right;
+    margin-top: 2.5rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.01em;
+    text-align: left;
+  }
+
+  a:hover h2.category {
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+
+  p.category-blurb {
+    color: var(--global-text-color-light);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 46rem;
+    margin-top: -0.1rem;
+    margin-bottom: 1.4rem;
+  }
+}
+
+// Research page themes
+
+.research-themes {
+  margin-top: 1.5rem;
+
+  .theme {
+    margin-bottom: 1.75rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--global-divider-color);
+
+    h4 {
+      color: var(--global-theme-color);
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    p {
+      color: var(--global-text-color);
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
   }
 }
 

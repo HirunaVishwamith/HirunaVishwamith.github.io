@@ -3,14 +3,15 @@ layout: page
 title: "ASTRA: Autonomous Satellite Traffic & Routing Architecture"
 description: A physics-accurate LEO satellite constellation simulator in pure C11 with custom OpenGL visualization, dynamic-topology routing, and machine-precision validation.
 img: assets/img/astra_dashboard.png
-importance: 6
-category: work
+importance: 3
+category: accelerators
+github: https://github.com/HirunaVishwamith/ASTRA
 related_publications: false
 ---
 
 ### Project Overview
 
-**ASTRA** (*Autonomous Satellite Traffic & Routing Architecture*) is a research-grade simulator for **Low Earth Orbit (LEO) satellite constellations**, written **entirely in C11** with a **hand-rolled OpenGL renderer** and **zero external dependencies** beyond system libraries. It models how orbital mechanics drive **dynamic network topology**, and measures the **routing efficiency and traffic performance** that result.
+**ASTRA** (_Autonomous Satellite Traffic & Routing Architecture_) is a research-grade simulator for **Low Earth Orbit (LEO) satellite constellations**, written **entirely in C11** with a **hand-rolled OpenGL renderer** and **zero external dependencies** beyond system libraries. It models how orbital mechanics drive **dynamic network topology**, and measures the **routing efficiency and traffic performance** that result.
 
 LEO mega-constellations (Starlink, Kuiper, and the like) present a networking problem that classical simulators handle poorly: the topology is never static. Satellites move at orbital velocity, inter-satellite links form and break continuously, and ground visibility changes by the second. ASTRA tackles this head-on by coupling **real two-body orbital propagation** to a **per-timestep network model**, so routing and traffic decisions are made over a topology that is physically correct at every instant.
 
@@ -26,22 +27,22 @@ ASTRA was built to be **physics-accurate first** — getting the orbital mechani
 
 ### Key Features
 
-* **Physics-accurate orbital mechanics**
+- **Physics-accurate orbital mechanics**
   A **universal-variables Kepler solver** propagates real two-body dynamics, with full **ECI ↔ ECEF** coordinate transforms and **line-of-sight occlusion** that accounts for Earth's geometry.
 
-* **Dynamic network modeling**
+- **Dynamic network modeling**
   Topology is **recomputed every timestep**, stored as a **CSR sparse adjacency matrix** for efficient queries, with **inverse-square link-budget** calculations governing which links are viable.
 
-* **Routing algorithms**
+- **Routing algorithms**
   Both **Dijkstra** (lazy-heap) and **Distance-Vector** implementations produce **all-pairs next-hop tables** synchronously, enabling direct comparison of routing strategies on identical topologies.
 
-* **Traffic generation & metrics**
+- **Traffic generation & metrics**
   **Uniform, hotspot, and burst** traffic models feed a **zero-allocation packet pool**, measuring **delivery ratio, latency, hop count, and link utilization**.
 
-* **Failure & resilience simulation**
+- **Failure & resilience simulation**
   Scripted **link blackouts, latency spikes, loss scaling, and node strikes**, with automatic system reboot — purpose-built for network-resilience studies.
 
-* **Custom OpenGL visualization**
+- **Custom OpenGL visualization**
   A from-scratch **3D viewer** (GLX/EGL) renders a graticule globe with **ISL and ground links colored by utilization**, interactive orbit-camera controls, and **headless rendering with PNG export** for batch studies.
 
 <div class="row justify-content-sm-center">
@@ -76,18 +77,18 @@ The project also ships profiling tooling for **100–1024 satellite scaling stud
 
 ### Technical Summary
 
-| Aspect              | Detail                                                                |
-| ------------------- | --------------------------------------------------------------------- |
-| **Language**        | C11 (~99% of codebase), zero external dependencies                    |
-| **Physics**         | Universal-variables Kepler solver; ECI/ECEF transforms; LOS occlusion |
-| **Graph storage**   | CSR sparse adjacency, recomputed per timestep                         |
-| **Routing**         | Dijkstra (lazy heap) + Distance-Vector, all-pairs next-hop            |
-| **Traffic**         | Uniform / hotspot / burst, zero-allocation packet pools               |
-| **Visualization**   | Hand-rolled OpenGL (GLX/EGL), 3D viewer with PNG export               |
-| **Concurrency**     | Lock-free sim/render boundary, ThreadSanitizer-clean                  |
-| **Validation**      | 3e-12 km orbital parity; bit-exact routing over 30k+ pairs            |
-| **Scale studies**   | 100–1024 satellites                                                   |
-| **License**         | MIT (academic use)                                                    |
+| Aspect            | Detail                                                                |
+| ----------------- | --------------------------------------------------------------------- |
+| **Language**      | C11 (~99% of codebase), zero external dependencies                    |
+| **Physics**       | Universal-variables Kepler solver; ECI/ECEF transforms; LOS occlusion |
+| **Graph storage** | CSR sparse adjacency, recomputed per timestep                         |
+| **Routing**       | Dijkstra (lazy heap) + Distance-Vector, all-pairs next-hop            |
+| **Traffic**       | Uniform / hotspot / burst, zero-allocation packet pools               |
+| **Visualization** | Hand-rolled OpenGL (GLX/EGL), 3D viewer with PNG export               |
+| **Concurrency**   | Lock-free sim/render boundary, ThreadSanitizer-clean                  |
+| **Validation**    | 3e-12 km orbital parity; bit-exact routing over 30k+ pairs            |
+| **Scale studies** | 100–1024 satellites                                                   |
+| **License**       | MIT (academic use)                                                    |
 
 ---
 
@@ -95,8 +96,7 @@ The project also ships profiling tooling for **100–1024 satellite scaling stud
 
 Orbital mechanics & numerical methods · graph algorithms and routing · high-performance systems programming in C · cache-friendly data structures (CSR, packet pools) · lock-free concurrency · real-time 3D graphics from scratch (OpenGL/GLX/EGL) · rigorous numerical validation and regression testing · network modeling and resilience analysis.
 
----
-
-[View ASTRA on GitHub](https://github.com/HirunaVishwamith/ASTRA)
-
----
+<div class="mt-4">
+  <a class="btn btn-sm z-depth-0" role="button" href="https://github.com/HirunaVishwamith/ASTRA">View ASTRA on GitHub</a>
+  <a class="btn btn-sm z-depth-0" role="button" href="{{ '/blog/2025/leo-satellite-networks-machine-precision/' | relative_url }}">Read the write-up</a>
+</div>

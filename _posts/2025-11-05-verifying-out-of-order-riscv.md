@@ -2,7 +2,7 @@
 layout: post
 title: "Verifying an Out-of-Order RISC-V Core in Lock-Step"
 date: 2025-11-05 09:00:00-0700
-description: How Chiron proves a speculative, out-of-order processor correct — instruction by instruction — against a golden model, without sacrificing readability.
+description: How Chiron proves a speculative, out-of-order, quad-core processor correct — instruction by instruction, on every hart — against a golden model, without sacrificing readability.
 tags: computer-architecture risc-v verification
 categories: projects
 giscus_comments: true
@@ -26,13 +26,19 @@ The moment they disagree, simulation halts **at the exact offending instruction*
 The payoff:
 
 - **All 84 official RISC-V ISA tests pass.**
-- The core **boots Linux** end-to-end.
+- The processor **boots Linux SMP** on four harts, all the way to an interactive shell.
 - It runs bare-metal workloads with cycle-accurate, continuously-verified correctness.
+
+### Four harts make it harder, and more worth doing
+
+Chiron is now a **quad-core** machine: four independent OoO harts sharing a non-blocking L2 behind an AXI-ACE coherent interconnect. Lock-step runs in 4-hart mode too, which matters more than it sounds. A coherence bug does not announce itself — it produces a plausible-looking wrong number, thousands of cycles after the protocol actually misbehaved. Checking all four harts against the golden model on every commit turns that class of bug back into what single-core lock-step gives you: a halt, at an exact instruction, on an exact core.
+
+The practical obstacle was speed. A Linux boot is roughly three billion RTL cycles; the Verilated model runs at ~40 K cycles/s multithreaded, so a boot is a day's work — and it checkpoints, so it is a day _once_.
 
 ### Why this is the interesting part
 
-The conventional wisdom is that you trade rigor for clarity: an industrial verified core is unreadable, and a readable teaching core isn't really verified. Chiron's microarchitecture is genuinely aggressive — 64-entry physical register file, an 8-entry issue queue with wake-up logic, a 16-entry reorder buffer, 4-wide in-order commit, and a TAGE+bimodal branch predictor over a non-blocking, MSHR-backed cache hierarchy — yet **every committed instruction is checked**. The design shows that pedagogical transparency and verification rigor are not opposites; the same structure that makes the RTL easy to read makes it easy to verify.
+The conventional wisdom is that you trade rigor for clarity: an industrial verified core is unreadable, and a readable teaching core isn't really verified. Chiron's microarchitecture is genuinely aggressive — 64-entry physical register file, an 8-entry issue queue with wake-up logic, a 16-entry reorder buffer, precise in-order commit, and a 4-table TAGE predictor over a bimodal base, sitting on a non-blocking, MSHR-backed cache hierarchy — yet **every committed instruction is checked**. The design shows that pedagogical transparency and verification rigor are not opposites; the same structure that makes the RTL easy to read makes it easy to verify.
 
 If you want to see it run, `make fire` renders a bare-metal Doom-fire effect straight from the core's UART on live RTL. There's something clarifying about watching embers scroll up a terminal and knowing that every instruction behind them was checked against a golden model.
 
-[Explore Chiron on GitHub →](https://github.com/HirunaVishwamith/Chiron)
+[Explore Chiron on GitHub →](https://github.com/HirunaVishwamith/Chiron) · [Full project write-up →]({{ '/projects/chiron/' | relative_url }})

@@ -3,11 +3,11 @@ layout: about
 title: about
 permalink: /
 description: >
-  Computer architecture researcher and FPGA Design Engineer co-designing hardware and
-  algorithms for efficient foundation-model computing — verified out-of-order RISC-V
-  processors, FPGA/CGRA accelerators, and hardware for efficient AI.
-subtitle: FPGA Design Engineer at Apex Compute
-
+  Computer architecture researcher and FPGA design engineer, co-designing hardware and
+  algorithms for efficient foundation-model computing — a lock-step verified quad-core
+  out-of-order RISC-V processor that boots Linux SMP, systolic-array and FPGA/CGRA
+  accelerators, and hardware for efficient AI.
+subtitle: FPGA Design Engineer at Apex Compute · computer architecture & AI acceleration
 profile:
   align: right
   image: prof_pic.jpg
@@ -28,43 +28,70 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-# Hi 👋!
-I work in **computer architecture**, on **co-designing hardware and algorithms for efficient foundation-model computing** — making large transformers and their successors tractable in compute, memory, and energy. I build and verify real processors and accelerators from the RTL up, spanning **reconfigurable computing** and **AI acceleration**. ([read more about my research →](/research/))
+I build **processors and accelerators from the RTL up**, and I verify them until the claims hold. My work sits in **computer architecture**, aimed at one problem: **co-designing hardware and algorithms for efficient foundation-model computing** — making large transformers and their successors tractable in compute, memory, and energy.
 
-Currently, I’m a **full-time FPGA Design Engineer at [Apex Compute](https://www.apexcompute.com/)** (California), where I design high-performance reconfigurable architectures.  
-Previously, I was a **Research Scholar at the [National University of Singapore (NUS)](https://www.nus.edu.sg/)**, where I implemented a **3DRA CGRA** on FPGA running at **650 MHz** and optimized data communication for a **100 Gbps TCP/IP Offload Engine**.
+Today I'm an **FPGA Design Engineer at [Apex Compute](https://www.apexcompute.com/)** (California), designing high-performance reconfigurable architectures and accelerators for LLM workloads. Previously I was a **Research Scholar at the [National University of Singapore](https://www.nus.edu.sg/)**, where I implemented a **3DRA CGRA on FPGA at 650 MHz** and optimized data movement for a **100 Gbps TCP/IP offload engine**. I hold a **BSc (Hons) in Electronics and Telecommunications Engineering** from the **[University of Moratuwa](https://ent.uom.lk/)**, where I led a team building a cache-coherent out-of-order multicore RISC-V processor from Chisel RTL onto an FPGA.
 
-I received my **BSc (Hons) in Electronics and Telecommunications Engineering** from the **[University of Moratuwa](https://ent.uom.lk/)**, where I led projects on **cache-coherent, out-of-order multi-core RISC-V CPUs** and **hardware-accelerated systems for AI and scientific computing**.
-
-My research has been published at venues like **IEEE HPEC**, **CHEP**, **ISARC**, and **INTCEC**, focusing on **FPGA acceleration** and **hardware-accelerated transformer architectures** for real-time scientific applications.  
-
-Before diving into research, I enjoyed building embedded systems and participating in hardware–ML competitions, securing **2nd place in latency** at the **[ACM/IEEE TinyML Design Contest @ ICCAD 2023](https://tinymlcontest.github.io/TinyML-Design-Contest-2023/Winners.html)** and advancing to the finals of the **[IEEE VIP Cup 2023](https://alregib.ece.gatech.edu/)**.
-
-When I’m not optimizing FPGA designs, I like exploring new AI models, and occasionally tinkering with low-level systems that connect software and silicon.
+My published work — at **IEEE HPEC, CHEP, ISARC, and INTCEC** — maps modern AI onto custom and emerging hardware: hardware-accelerated transformers for real-time systems, and neuromorphic computing for particle physics, audio, and CFD.
 
 ---
 
-### selected highlights:
+## what i'm building
 
-<ul>
-  <li><b>5 peer-reviewed publications</b> across <b>IEEE HPEC, CHEP, ISARC, and INTCEC</b> on hardware-accelerated transformers and FPGA-based AI systems — including, most recently, the <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305485_Hardware-Accelerated_Transformer_Framework_for_Real-Time_Battery_SoH_Estimation/links/68bcf9f86fe8e57ec8e2f9db/Hardware-Accelerated-Transformer-Framework-for-Real-Time-Battery-SoH-Estimation.pdf">Hardware-Accelerated Transformer Framework for Real-Time Battery SoH Estimation</a> and <a href="https://www.researchgate.net/profile/Hiruna-Vishwamith/publication/395305489_Exploring_Neuromorphic_Computing_with_Loihi-2_for_High-Performance_CFD_Simulations/links/68bcf9c56fe8e57ec8e2f9d9/Exploring-Neuromorphic-Computing-with-Loihi-2-for-High-Performance-CFD-Simulations.pdf">Exploring Neuromorphic Computing with Loihi-2 for High-Performance CFD Simulations</a>, both at <b>IEEE HPEC 2025</b>.</li>
+<div class="row row-cols-1 row-cols-md-2">
+  <div class="col mb-4">
+    <a href="{{ '/projects/chiron/' | relative_url }}">
+      <div class="card h-100 hoverable">
+        <div class="card-body">
+          <h3 class="card-title">Chiron</h3>
+          <p class="card-text">A <b>quad-core out-of-order RV64IMA processor</b> in Chisel. Four OoO harts behind an ACE-coherent, non-blocking cache hierarchy — every committed instruction checked in lock-step against a golden model, all 84 RISC-V ISA tests passing, and <b>Linux SMP booting to an interactive shell</b>.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col mb-4">
+    <a href="{{ '/projects/talos/' | relative_url }}">
+      <div class="card h-100 hoverable">
+        <div class="card-body">
+          <h3 class="card-title">Talos</h3>
+          <p class="card-text">A <b>cycle-accurate systolic array simulator</b> that steps a real PE mesh one clock at a time and shows where the cycles and the joules actually went — efficiency waterfall, energy breakdown, roofline, and a design-space search, validated against published TPUv1 silicon.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col mb-4">
+    <a href="{{ '/projects/simd-matrix-processor/' | relative_url }}">
+      <div class="card h-100 hoverable">
+        <div class="card-body">
+          <h3 class="card-title">SIMD Matrix Processor</h3>
+          <p class="card-text">A fully <b>parameterized SIMD processor</b> with a custom ISA for matrix arithmetic, built for hardware acceleration on FPGA — the datapath side of the same question Talos models.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col mb-4">
+    <a href="{{ '/projects/astra/' | relative_url }}">
+      <div class="card h-100 hoverable">
+        <div class="card-body">
+          <h3 class="card-title">ASTRA</h3>
+          <p class="card-text">A <b>physics-accurate LEO constellation simulator</b> in pure C11 coupling real Kepler orbital mechanics to per-timestep routing — validated to <b>machine precision</b> (3×10⁻¹² km orbital parity, bit-exact routing over 30k+ paths), with a hand-rolled OpenGL renderer.</p>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
 
-  <li><b><a href="/projects/">Chiron</a> — a fully-verified out-of-order RISC-V processor</b>: a teaching-grade RV64IMA core in Chisel with register renaming, TAGE branch prediction, and a coherent non-blocking cache hierarchy. Every committed instruction is checked in <b>lock-step against a golden model</b> — all 84 RISC-V ISA tests pass, and it <b>boots Linux</b>.</li>
+<p class="text-right"><a href="{{ '/projects/' | relative_url }}">See all projects →</a></p>
 
-  <li><b>End-to-end cache-coherent multicore</b>: an out-of-order, cache-coherent multicore RISC-V processor taken from RTL to FPGA, running bare-metal C programs and booting Linux images.</li>
+---
 
-  <li><b><a href="/projects/">ASTRA</a> — physics-accurate LEO satellite-network simulation</b>: a constellation simulator in pure C11 coupling real Kepler orbital mechanics to per-timestep routing, validated to <b>machine precision</b> (3×10⁻¹² km orbital parity, bit-exact routing over 30k+ paths) with a hand-rolled OpenGL renderer.</li>
+## selected highlights
 
-  <li><b>Competition results</b>: <b>2nd place in latency</b> at the <a href="https://tinymlcontest.github.io/TinyML-Design-Contest-2023/Winners.html">ACM/IEEE TinyML Design Contest @ ICCAD 2023</a>, and <b>finalist</b> at the <a href="https://alregib.ece.gatech.edu/">IEEE VIP Cup 2023</a>.</li>
-</ul>
-<!-- in  and <a href="https://arxiv.org/abs/2302.04449">guiding</a> agent behavior in different data modalities</b> to create more reliable, interpretable, and less data hungry AI models. I'm also very interested -->
+- **5 peer-reviewed publications** at **IEEE HPEC, CHEP, ISARC, and INTCEC** on hardware-accelerated transformers and neuromorphic systems — most recently two papers at **HPEC 2025**. [See publications →]({{ '/publications/' | relative_url }})
+- **Linux SMP running on a processor I designed and verified** — four out-of-order RISC-V harts, every committed instruction checked against a golden model, deployed to FPGA.
+- **2nd place in latency** at the [ACM/IEEE TinyML Design Contest @ ICCAD 2023](https://tinymlcontest.github.io/TinyML-Design-Contest-2023/Winners.html), and **finalist** at the [IEEE VIP Cup 2023](https://alregib.ece.gatech.edu/).
+- **650 MHz CGRA on FPGA** and a **100 Gbps TCP/IP offload engine** at NUS.
 
 <p>
 <br>
 </p>
-
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
-
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
-
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->

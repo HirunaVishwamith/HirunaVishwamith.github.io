@@ -3,8 +3,9 @@ layout: page
 title: Parallel System Bus on FPGA
 description: Multi-master, multi-slave bus architecture enabling efficient parallel communication on DE0-Nano FPGA
 img: assets/img/system_bus.jpg
-importance: 4
-category: work
+importance: 3
+category: hardware
+github: https://github.com/HirunaVishwamith/System_Bus_Design
 related_publications: false
 ---
 

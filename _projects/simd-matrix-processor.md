@@ -3,8 +3,9 @@ layout: page
 title: Parameterized SIMD Processor for Matrix Operations
 description: Fully parameterized SIMD processor with custom ISA for matrix arithmetic and hardware acceleration on FPGA
 img: assets/img/SIMD_processor.png
-importance: 5
-category: work
+importance: 2
+category: accelerators
+github: https://github.com/HirunaVishwamith/SIMD_Processor
 related_publications: false
 ---
 
