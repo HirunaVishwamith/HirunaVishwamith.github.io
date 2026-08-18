@@ -5,7 +5,7 @@ date: 2025-11-03 10:00:00-0500
 description: ASTRA couples real orbital mechanics to a per-timestep network model so that routing and traffic decisions are made over a physically correct, continuously-changing topology.
 tags: systems networking research
 categories: projects
-giscus_comments: true
+giscus_comments: false
 related_posts: false
 featured: true
 thumbnail: assets/img/astra_dashboard.png

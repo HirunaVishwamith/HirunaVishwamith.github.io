@@ -5,7 +5,7 @@ date: 2026-07-29 10:00:00-0700
 description: Talos steps a real PE mesh one clock at a time, and the numbers that fall out explain most of the last fifteen years of accelerator architecture.
 tags: computer-architecture accelerators simulation
 categories: projects
-giscus_comments: true
+giscus_comments: false
 related_posts: false
 featured: true
 thumbnail: assets/img/talos_cockpit.png

@@ -5,7 +5,7 @@ date: 2025-06-15 12:00:00-0530
 description: How a final-year project — out-of-order cores, a coherent cache hierarchy, and enough of a system to boot Linux — went from Chisel RTL onto an FPGA, and became the processor I now call Chiron.
 tags: computer-architecture risc-v fpga
 categories: projects
-giscus_comments: true
+giscus_comments: false
 related_posts: false
 ---
 

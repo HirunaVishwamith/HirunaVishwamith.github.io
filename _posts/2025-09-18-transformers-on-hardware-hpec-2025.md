@@ -5,7 +5,7 @@ date: 2025-09-18 11:00:00-0400
 description: A look at the thread running through my research — mapping modern AI and neuromorphic models onto hardware for real-time scientific workloads, from HPEC and CHEP to ISARC.
 tags: fpga research neuromorphic
 categories: research
-giscus_comments: true
+giscus_comments: false
 related_posts: false
 ---
 

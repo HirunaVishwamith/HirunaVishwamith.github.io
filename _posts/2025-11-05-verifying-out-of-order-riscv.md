@@ -5,7 +5,7 @@ date: 2025-11-05 09:00:00-0700
 description: How Chiron proves a speculative, out-of-order, quad-core processor correct — instruction by instruction, on every hart — against a golden model, without sacrificing readability.
 tags: computer-architecture risc-v verification
 categories: projects
-giscus_comments: true
+giscus_comments: false
 related_posts: false
 featured: true
 thumbnail: assets/img/chiron.png
