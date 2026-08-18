@@ -29,19 +29,19 @@ This project addresses that challenge by creating a **multi-master, multi-slave 
 
 ### Key Features
 
-* **Multi-Master, Multi-Slave Architecture:**
+- **Multi-Master, Multi-Slave Architecture:**
   Supports two masters and three slaves operating concurrently, enabling **parallel data transactions**.
 
-* **Verilog Implementation:**
+- **Verilog Implementation:**
   Entire design written in **Verilog HDL**, ensuring portability and efficient hardware synthesis.
 
-* **FPGA Deployment:**
+- **FPGA Deployment:**
   Implemented and tested on the **Intel DE0-Nano FPGA board**, using **Quartus Prime** for synthesis, timing analysis, and programming.
 
-* **Real-Time Debugging:**
+- **Real-Time Debugging:**
   Integrated with **In-System Memory Content Editor** for live memory inspection, aiding real-time monitoring and debugging.
 
-* **Pre-Hardware Verification:**
+- **Pre-Hardware Verification:**
   Verified functionality using **Verilator**, ensuring correctness and robustness before FPGA deployment.
 
 ---
@@ -94,11 +94,11 @@ The system bus architecture is composed of several core modules:
 
 ### Future Enhancements
 
-* Integrate **AXI-lite** or **Wishbone-compatible interface** for broader interoperability.
-* Add **bus performance counters** for transaction latency analysis.
-* Introduce **DMA (Direct Memory Access)** for high-throughput data movement.
-* Expand scalability to support **more masters and slaves** dynamically.
-* Develop a **graphical monitoring tool** for visualizing bus traffic and arbitration events in real time.
+- Integrate **AXI-lite** or **Wishbone-compatible interface** for broader interoperability.
+- Add **bus performance counters** for transaction latency analysis.
+- Introduce **DMA (Direct Memory Access)** for high-throughput data movement.
+- Expand scalability to support **more masters and slaves** dynamically.
+- Develop a **graphical monitoring tool** for visualizing bus traffic and arbitration events in real time.
 
 ---
 

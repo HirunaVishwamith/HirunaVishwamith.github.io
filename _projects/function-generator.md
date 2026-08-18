@@ -29,19 +29,19 @@ This project also served as a foundation for exploring **digital waveform genera
 
 ### Key Features
 
-* **Multiple Waveform Generation:**
+- **Multiple Waveform Generation:**
   Produces **sine**, **square**, **triangular**, and **sawtooth** waveforms.
 
-* **Adjustable Frequency and Duty Cycle:**
+- **Adjustable Frequency and Duty Cycle:**
   Frequency range from **20 Hz to 20 kHz**, with tunable duty cycle control.
 
-* **Op-Amp Based Design:**
+- **Op-Amp Based Design:**
   Utilizes **operational amplifiers** for waveform shaping and amplitude control.
 
-* **Hands-On Learning:**
+- **Hands-On Learning:**
   Strengthened practical skills in circuit debugging, signal integrity, and component selection.
 
-* **Educational Impact:**
+- **Educational Impact:**
   Served as a **capstone analog project**, consolidating essential knowledge in **electronics engineering**.
 
 ---
@@ -107,4 +107,3 @@ I’m deeply grateful to all team members and mentors who contributed their know
 [View Project on GitHub](https://github.com/HirunaVishwamith/Analog-Function-generator)
 
 ---
-

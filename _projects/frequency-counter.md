@@ -29,22 +29,22 @@ By leveraging **advanced signal processing** and **precision timing circuitry**,
 
 ### Key Features
 
-* **Wide Frequency Range:**
+- **Wide Frequency Range:**
   Accurately measures signals from **1 Hz to 100 MHz**.
 
-* **High Voltage Handling:**
+- **High Voltage Handling:**
   Supports input amplitudes up to **100 V**, compatible with various signal sources.
 
-* **Reciprocal Counting Technique:**
+- **Reciprocal Counting Technique:**
   Delivers **high precision** by measuring time intervals relative to a reference clock.
 
-* **Signal Flexibility:**
+- **Signal Flexibility:**
   Capable of handling multiple waveform types — sine, square, triangular, and pulse signals.
 
-* **User-Friendly Interface:**
+- **User-Friendly Interface:**
   Simplified control layout and clear display for seamless measurement and configuration.
 
-* **Product-Oriented Design:**
+- **Product-Oriented Design:**
   Designed as a **marketable, sellable device**, showcasing both engineering and **product design** skills.
 
 ---

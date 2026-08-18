@@ -9,7 +9,6 @@ github: https://github.com/HirunaVishwamith/Mt-Benchmark
 related_publications: false
 ---
 
-
 ### Project Overview
 
 This project focuses on developing a **multi-threaded RISC-V benchmark framework** designed to evaluate and compare the performance of **custom RISC-V multicore processors** and **emulator environments**. The framework integrates a set of **standard RISC-V benchmarks** as a foundation, with ongoing efforts to incorporate **multi-threaded and memory-intensive workloads** for more comprehensive testing.
@@ -21,12 +20,13 @@ The primary goal is to provide a **lightweight, extensible, and freestanding ben
 
 **Summary:**  
 These benchmarks collectively evaluate various aspects of multicore performance — including **arithmetic throughput**, **memory bandwidth**, **cache utilization**, **load balancing**, and **synchronization efficiency**.  
-Each test targets a distinct computational pattern:  
-- `mt-vvadd` performs vector addition to test memory bandwidth and data-level parallelism.  
-- `mt-csaxpy` stresses arithmetic pipelines through scalar-vector fused multiply-add operations.  
-- `mt-histo` measures synchronization overhead and cache coherence under shared data access.  
-- `mt-masks-filter` evaluates control divergence, branch prediction, and conditional data movement.  
-- `mt-matmul` represents compute-intensive matrix multiplication to assess arithmetic throughput and cache locality.  
+Each test targets a distinct computational pattern:
+
+- `mt-vvadd` performs vector addition to test memory bandwidth and data-level parallelism.
+- `mt-csaxpy` stresses arithmetic pipelines through scalar-vector fused multiply-add operations.
+- `mt-histo` measures synchronization overhead and cache coherence under shared data access.
+- `mt-masks-filter` evaluates control divergence, branch prediction, and conditional data movement.
+- `mt-matmul` represents compute-intensive matrix multiplication to assess arithmetic throughput and cache locality.
 
 Together, these workloads provide a **balanced and realistic performance profile** across computation-heavy and memory-bound applications — making this suite a robust tool for benchmarking **RISC-V multicore architectures**.
 
@@ -103,37 +103,36 @@ The framework consists of three main components:
   Right: UART terminal output showing benchmark execution and results.
 </div>
 
-
 ---
 
 ### Technical Insights
 
-- Modular codebase written in **C and RISC-V assembly** for fine-grained hardware control.  
-- Thread management implemented using **atomic operations** from the RISC-V “A” extension.  
-- Supports **build automation** via Makefiles using the `riscv64-unknown-elf-gcc` toolchain.  
+- Modular codebase written in **C and RISC-V assembly** for fine-grained hardware control.
+- Thread management implemented using **atomic operations** from the RISC-V “A” extension.
+- Supports **build automation** via Makefiles using the `riscv64-unknown-elf-gcc` toolchain.
 - Designed for both **FPGA-based systems** and **cycle-accurate RISC-V emulators**.
 
 ---
 
 ### Future Enhancements
 
-- Integration of **multi-threaded DSP kernels** and **machine learning workloads**.  
-- Development of a **performance visualization tool** to plot metrics automatically.  
-- Adding **cache and memory bandwidth tests** to better model realistic workloads.  
+- Integration of **multi-threaded DSP kernels** and **machine learning workloads**.
+- Development of a **performance visualization tool** to plot metrics automatically.
+- Adding **cache and memory bandwidth tests** to better model realistic workloads.
 - Providing **JSON-based benchmark output** for easier scripting and automation.
 
 ---
 
 ### Tools & Technologies
 
-| Component | Description |
-|------------|-------------|
-| **Language** | C, RISC-V Assembly |
-| **Target Platform** | Bare-metal multicore RISC-V processors |
-| **Output Interface** | UART (serial terminal) |
-| **Toolchain** | RISC-V GCC (`riscv64-unknown-elf-gcc`) |
-| **Supported Extensions** | I, M, A, CSR, FENCE |
-| **Environment** | Emulator or FPGA hardware |
+| Component                | Description                            |
+| ------------------------ | -------------------------------------- |
+| **Language**             | C, RISC-V Assembly                     |
+| **Target Platform**      | Bare-metal multicore RISC-V processors |
+| **Output Interface**     | UART (serial terminal)                 |
+| **Toolchain**            | RISC-V GCC (`riscv64-unknown-elf-gcc`) |
+| **Supported Extensions** | I, M, A, CSR, FENCE                    |
+| **Environment**          | Emulator or FPGA hardware              |
 
 ---
 
@@ -145,6 +144,3 @@ By removing OS dependencies and providing direct hardware interfacing through UA
 ---
 
 [View Project on GitHub](https://github.com/HirunaVishwamith/Mt-Benchmark")
-
-
-

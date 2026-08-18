@@ -26,10 +26,10 @@ To accelerate development and testing of multicore systems, this project provide
 
 The goal is to deliver a **functional, cycle-accurate simulation framework** that researchers and developers can use to study:
 
-- Multi-core boot flows under Linux  
-- Interrupt delivery and timer management via CLINT  
-- Synchronization mechanisms and inter-core communication  
-- Bare-metal program execution without OS dependencies  
+- Multi-core boot flows under Linux
+- Interrupt delivery and timer management via CLINT
+- Synchronization mechanisms and inter-core communication
+- Bare-metal program execution without OS dependencies
 
 ---
 
@@ -56,10 +56,10 @@ The goal is to deliver a **functional, cycle-accurate simulation framework** tha
 
 The emulator architecture is composed of several main components:
 
-1. **CPU Core Instances** — Multiple RISC-V harts running in parallel, each with its own register file and CSR state.  
-2. **CLINT (Core Local Interruptor)** — Manages per-core timer and software interrupts for SMP operation.  
-3. **Memory Subsystem** — Provides a unified address space shared among all harts.  
-4. **Device Tree Interface** — Passes hardware configuration details to the booting Linux kernel.  
+1. **CPU Core Instances** — Multiple RISC-V harts running in parallel, each with its own register file and CSR state.
+2. **CLINT (Core Local Interruptor)** — Manages per-core timer and software interrupts for SMP operation.
+3. **Memory Subsystem** — Provides a unified address space shared among all harts.
+4. **Device Tree Interface** — Passes hardware configuration details to the booting Linux kernel.
 5. **Boot Manager** — Handles system initialization and core startup sequencing.
 
 ---
@@ -84,25 +84,25 @@ The emulator architecture is composed of several main components:
 
 ### Technical Insights
 
-| Component | Description |
-|------------|-------------|
-| **Language** | C++ |
-| **Architecture** | Multi-core RISC-V (RV64) |
-| **Key Module** | CLINT – Core Local Interruptor for timer and software interrupts |
-| **OS Support** | Linux (SMP) and bare-metal |
-| **Device Tree** | Custom DTB describing multi-core topology |
-| **MMU** | Disabled for simplified hardware interaction |
-| **Output Interface** | UART console |
-| **Use Case** | Kernel testing, interrupt handling validation, and multicore boot studies |
+| Component            | Description                                                               |
+| -------------------- | ------------------------------------------------------------------------- |
+| **Language**         | C++                                                                       |
+| **Architecture**     | Multi-core RISC-V (RV64)                                                  |
+| **Key Module**       | CLINT – Core Local Interruptor for timer and software interrupts          |
+| **OS Support**       | Linux (SMP) and bare-metal                                                |
+| **Device Tree**      | Custom DTB describing multi-core topology                                 |
+| **MMU**              | Disabled for simplified hardware interaction                              |
+| **Output Interface** | UART console                                                              |
+| **Use Case**         | Kernel testing, interrupt handling validation, and multicore boot studies |
 
 ---
 
 ### Future Enhancements
 
-- Add **PLIC (Platform-Level Interrupt Controller)** for external interrupt support.  
-- Introduce **MMU support** to boot standard Linux distributions with virtual memory.  
-- Integrate **performance counters** for benchmarking emulator efficiency.  
-- Expand device support (e.g., UART, GPIO, SPI) for more complete system modeling.  
+- Add **PLIC (Platform-Level Interrupt Controller)** for external interrupt support.
+- Introduce **MMU support** to boot standard Linux distributions with virtual memory.
+- Integrate **performance counters** for benchmarking emulator efficiency.
+- Expand device support (e.g., UART, GPIO, SPI) for more complete system modeling.
 - Develop a **visual debugging interface** for stepwise core execution and interrupt tracing.
 
 ---
@@ -117,4 +117,3 @@ It bridges the gap between simulation and real hardware, enabling **early-stage 
 ---
 
 [View Project on GitHub](https://github.com/HirunaVishwamith/fyp18-riscv-emulator)
-

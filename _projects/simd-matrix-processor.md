@@ -30,19 +30,19 @@ By leveraging **FPGA hardware parallelism** and **customized instruction design*
 
 ### Key Features
 
-* **Custom SIMD ISA:**
+- **Custom SIMD ISA:**
   Designed specifically for matrix operations (multiplication, addition, subtraction), maximizing throughput for data-parallel workloads.
 
-* **4-Stage Pipelined Microarchitecture:**
+- **4-Stage Pipelined Microarchitecture:**
   Pipeline stages include **Fetch**, **Decode**, **Execute**, and **Write-Back**, each supporting multicycle operation for performance optimization.
 
-* **Parameterization:**
+- **Parameterization:**
   Core datapath width, vector length, and instruction word size are fully configurable for scalability and design flexibility.
 
-* **AXI & DMA Integration:**
+- **AXI & DMA Integration:**
   Incorporates **AXI interfaces** and **DMA controllers** for high-speed data transfer between processor and memory subsystems.
 
-* **FPGA Deployment:**
+- **FPGA Deployment:**
   Implemented on the **ZYBO Z7 development board**, using **Xilinx Vivado** for design and synthesis, and **Vitis** for software-hardware integration.
 
 ---
@@ -110,11 +110,11 @@ The processor architecture consists of the following major components:
 
 ### Future Enhancements
 
-* Extend the ISA to support **floating-point arithmetic** and **transcendental functions**.
-* Implement **branch prediction** and **hazard detection** mechanisms for enhanced pipeline efficiency.
-* Add **cache hierarchy** to improve memory bandwidth utilization.
-* Explore **Chisel** or **SystemVerilog** reimplementation for higher abstraction and reuse.
-* Integrate **software-level compiler support** for automatic SIMD instruction generation.
+- Extend the ISA to support **floating-point arithmetic** and **transcendental functions**.
+- Implement **branch prediction** and **hazard detection** mechanisms for enhanced pipeline efficiency.
+- Add **cache hierarchy** to improve memory bandwidth utilization.
+- Explore **Chisel** or **SystemVerilog** reimplementation for higher abstraction and reuse.
+- Integrate **software-level compiler support** for automatic SIMD instruction generation.
 
 ---
 
@@ -128,4 +128,3 @@ It bridges the gap between **hardware-level optimization** and **algorithmic com
 [View Project on GitHub](https://github.com/HirunaVishwamith/SIMD_Processor)
 
 ---
-
